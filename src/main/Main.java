@@ -16,7 +16,7 @@ public class Main {
                 String[] Array = text1.split("\"");
 
                 for (String s : Array) {
-                    if (s.length() > 11) {
+                    if (s.length() > 12) {
                         System.out.println("Error: значение не должно быть 10 знаков");
                         System.exit(0);
                     }
@@ -40,9 +40,15 @@ public class Main {
                         }
                     }
                     else if(operation == '-'){
-                        String a = Array[3];
-                        String b = Array[1].replace(a, "");
-                        System.out.println(b);
+
+                        StringBuffer c = new StringBuffer(Array[1]);
+                        StringBuffer d = new StringBuffer(Array[3]);
+
+
+                        c.delete (c.length() - d.length(), c.length());
+
+
+                        System.out.println(c);
                     }
                     else{
                         System.out.println("Ошибка!");
@@ -50,7 +56,7 @@ public class Main {
                     }
                 }
                 else if(operation == '*'){
-                    oneFragment.oneFragment (text1);
+                    oneFragment.multiply (text1);
                 }
                 else if(operation == '/'){
                     twoFragment.mutiplication(text1);
