@@ -2,6 +2,7 @@ package main;
 
 import java.util.Scanner;
 
+
 public class Main {
 
     private static char operation;
@@ -45,10 +46,20 @@ public class Main {
                         StringBuffer d = new StringBuffer(Array[3]);
 
 
-                        c.delete (c.length() - d.length(), c.length());
+                        if (Array[1].contains(d)){
 
 
-                        System.out.println(c);
+                         c.delete (c.length() - d.length(), c.length());
+
+
+                                System.out.println(c);}
+
+                         else if  (c.length() != d.length()) {
+                            StringBuffer a = new StringBuffer(Array[1]);
+                            System.out.println(a);
+                        }
+
+
                     }
                     else{
                         System.out.println("Ошибка!");
